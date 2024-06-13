@@ -1,6 +1,7 @@
 import state from './state.js'
 import * as el from './elements.js'
 import { reset } from './actions.js'
+import { kichenTmer } from './sounds.js'
 
 export function countdown() {
 clearTimeout(state.countdownId)
@@ -21,6 +22,7 @@ clearTimeout(state.countdownId)
 
     if(minutes < 0) {
         reset()
+        kichenTmer.play()
         return
     }
 
